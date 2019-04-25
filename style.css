@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+ /* aqui importamos la fuente Poppins de gloogleapis */
+body
+{
+    /* aqui controlamos los margenes tanto superiores
+    como inferiores una especie de sangria*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+section
+{
+
+    position: relative;
+    /*Este height define basicamente
+    la dimension que cubrira en el body*/
+    height: 100vh;
+
+    /*El displey flex es el que hace
+    posible el efecto*/
+    display: flex;
+
+    /*Color negro*/
+    background: #000;
+}
+
+section .screen
+{
+	 position: relative;
+	 /*Reduce el tamaño de los elementos*/
+     flex-grow: 2;
+    display: flex; 
+
+    /*Estos 2 elementos se encargar
+    de posicionar el texto al final lateralmente
+    y abajo*/
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    /*Oculta el texto bajo la imagen*/
+    overflow: hidden;
+   
+   /*transicion en posicionarse la imagen*/
+    transition: 1s;
+}
+/*Se activa cuando se pasa el mouse por sobre 
+el elemento*/
+section:hover .screen
+{
+	 opacity: 0.1;
+}
+
+
+section .screen:hover
+{
+	/*Tamaño lateral que cubren las imagenes*/
+	 flex-grow: 4;
+	 opacity: 1;
+}
+
+section .screen:nth-child(1)
+{
+	background: url(m1.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
+section .screen:nth-child(2)
+{
+	background: url(m5.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+section .screen:nth-child(3)
+{
+	background: url(m2.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
+section .screen .content
+{
+	position: absolute;
+	width: 400px;
+	height: auto;
+	background: #fff;
+	padding: 40px;
+
+	/*dimensionamiento de la caja*/
+	box-sizing: border-box;
+
+	transform: translateX(100%);
+
+	/*Tiempo de aparicion*/
+	transition: 0.5s;
+	text-align: justify;
+}
+
+section .screen:hover .content
+{
+	transform: translateX(0);
+
+
+	/*tiempo de retraso*/
+	transition-delay: 1s;
+
+}
+
+section .screen .content h2
+{
+	/* Margin y paddin controlan el tamaño del contener*/
+	margin: 0;
+	padding: 0;
+
+	/*Esta linea convierte a mayusuclas
+	en este caso el h2*/
+	text-transform: uppercase;
+
+	/*esta es la fuente del comentario */
+	font-size: 25px;
+	color: #ed363a;
+}
+
+section .screen .content p
+{/*en este caso controlan la sangria o espacio entre el borde
+	del texto y la caja que lo contiene*/
+     margin: 0;
+	padding: 0;
+  
+}
